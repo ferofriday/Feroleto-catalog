@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F6F4F0;
+  --white: #FFFFFF;
+  --dark: #2A2926;
+  --green: #3B5332;
+  --green-mid: #506B44;
+  --green-soft: #7A9466;
+  --brown: #7D6B56;
+  --clay: #B87A52;
+  --sand: #C8BDAB;
+  --warm: #EAE6DE;
+  --line: #DDD8CE;
+  /* System fonts so the page loads without waiting on Google Fonts */
+  --font-playfair: Georgia, 'Times New Roman', serif;
+  --font-source-sans: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-source-sans);
+  background: var(--bg);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Placeholder image backgrounds for crop cards - rotate between these */
+.placeholder-sage { background-color: #9CAF88; }
+.placeholder-sand { background-color: #C8BDAB; }
+.placeholder-brown { background-color: #B8A898; }
+.placeholder-cream { background-color: #E8E4DC; }

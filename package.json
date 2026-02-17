@@ -1,0 +1,35 @@
+{
+  "name": "feroleto-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo -p 8080",
+    "dev:turbo": "next dev --turbo -p 8080",
+    "build": "next build",
+    "serve": "node server.js",
+    "start": "next start -p 8080",
+    "lint": "next lint",
+    "seed": "tsx src/scripts/seed.ts",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:1})\"",
+    "go": "npm run build && npm run start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "next": "14.2.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.6.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.18",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

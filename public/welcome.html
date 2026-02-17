@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feroleto Garden Co.</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #F6F4F0;
+      color: #2A2926;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: #3B5332; }
+    p { color: #7D6B56; margin-bottom: 1.5rem; }
+    form { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 20rem; }
+    label { font-weight: 500; font-size: 0.875rem; }
+    input {
+      padding: 0.75rem 1rem;
+      border: 1px solid #DDD8CE;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem 1rem;
+      background: #3B5332;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:hover { background: #506B44; }
+    .brand { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7D6B56; margin-top: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <div style="font-size: 1.15rem; color: #3B5332;">Feroleto Garden Co.</div>
+    <div class="brand">What We Grow</div>
+  </div>
+  <h1>Welcome</h1>
+  <p>Enter your name to browse the catalog and choose what you'd like in your garden this season.</p>
+  <form action="/api/set-name" method="POST">
+    <label for="name">Your name</label>
+    <input id="name" name="clientName" type="text" placeholder="e.g. Jane" required>
+    <button type="submit">Continue to catalog</button>
+  </form>
+  <p style="margin-top: 2rem; font-size: 0.875rem;">If the form doesn’t work, the Next.js app may still be compiling. Try <a href="/">/</a> again in a minute.</p>
+</body>
+</html>

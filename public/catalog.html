@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog — Feroleto Garden Co.</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: #F6F4F0; color: #2A2926; min-height: 100vh; }
+    header {
+      background: #fff; border-bottom: 1px solid #DDD8CE;
+      padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { color: #3B5332; font-size: 1.1rem; }
+    .brand-sub { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7D6B56; }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: #2A2926; }
+    p { color: #7D6B56; line-height: 1.5; margin-bottom: 1rem; }
+    .card {
+      background: #fff; border: 1px solid #DDD8CE; border-radius: 4px;
+      padding: 2rem; margin-top: 1.5rem; text-align: center;
+    }
+    .card h2 { font-size: 1.1rem; margin-bottom: 0.75rem; color: #3B5332; }
+    .card p { margin-bottom: 0; font-size: 0.9rem; }
+    a { color: #3B5332; }
+    code { background: #EAE6DE; padding: 0.2em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="brand">Feroleto Garden Co.</div>
+      <div class="brand-sub">What We Grow</div>
+    </div>
+  </header>
+  <main>
+    <h1>Catalog</h1>
+    <p>Browse by category and click a card to see varieties.</p>
+    <div class="card">
+      <h2>No crops loaded</h2>
+      <p>To see the full catalog here, add Supabase to <code>.env.local</code>, run the schema in the Supabase SQL editor, then run <code>npm run seed</code>.</p>
+      <p style="margin-top: 1rem;">Until then, the app is set up — welcome worked and you’re on the catalog page.</p>
+    </div>
+    <p style="margin-top: 1.5rem;"><a href="/">← Back to welcome</a></p>
+  </main>
+</body>
+</html>
