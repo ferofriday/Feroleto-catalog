@@ -1,4 +1,36 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function WelcomePage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    try {
+      const res = await fetch('/api/set-name', {
+        method: 'POST',
+        body: formData,
+      });
+      if (res.ok) {
+        router.push('/catalog');
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <main className="min-h-screen bg-bg flex flex-col">
       <header className="bg-white border-b border-line px-4 py-5 md:px-8 flex justify-between items-center">
@@ -13,7 +45,7 @@ export default function WelcomePage() {
           <p className="text-brown mb-8">
             Enter your name to browse the catalog and choose what you&apos;d like in your garden this season.
           </p>
-          <form action="/api/set-name" method="POST" className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <label htmlFor="name" className="block text-sm font-medium text-dark">
               Your name
             </label>
@@ -25,11 +57,13 @@ export default function WelcomePage() {
               className="w-full px-4 py-3 border border-line rounded-sm bg-white text-dark placeholder-sand focus:outline-none focus:ring-2 focus:ring-green/30 focus:border-green"
               required
             />
+            {error && <p className="text-red-600 text-sm">{error}</p>}
             <button
               type="submit"
-              className="w-full bg-green text-white font-medium py-3 rounded-sm hover:bg-green-mid transition-colors"
+              disabled={loading}
+              className="w-full bg-green text-white font-medium py-3 rounded-sm hover:bg-green-mid transition-colors disabled:opacity-60"
             >
-              Continue to catalog
+              {loading ? 'Loading…' : 'Continue to catalog'}
             </button>
           </form>
         </div>
